@@ -1,4 +1,4 @@
-# Customer report dashboard for woocommerce
+=== Customer Reports for WooCommerce  ===
 Contributors: gandhihitesh9,pooja-n
 Tags: woocommerce, better, customer, list, user, management, data, status, orders, report, value
 Requires at least: 4.7
@@ -29,4 +29,3 @@ Key Features:
 With the Customer Report for WooCommerce plugin, you can leverage this valuable information to tailor your marketing strategies, improve customer retention, and enhance overall customer satisfaction. Gain deeper insights into your customer base and make informed decisions to drive the success of your online store.
 
 Whether you're a small business owner or a large enterprise, the Customer Report for WooCommerce plugin is an essential tool for optimizing your e-commerce strategy. Gain valuable insights, improve customer satisfaction, and boost your sales with this indispensable plugin.
-
