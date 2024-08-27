@@ -1,6 +1,6 @@
-=== Customer Reports for WooCommerce  ===
-Contributors: gandhihitesh9,pooja-n
-Tags: woocommerce, better, customer, list, user, management, data, status, orders, report, value
+=== Customer Reports for WC  ===
+Contributors: gandhihitesh9
+Tags: woocommerce, customer, report
 Requires at least: 4.7
 Tested up to: 6.6.1
 Stable tag: 1.0.0

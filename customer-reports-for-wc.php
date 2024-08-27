@@ -8,12 +8,11 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * 
  * @since             1.0.0
  * @package           Customer_Reports_For_Wc
  *
  * @wordpress-plugin
- * Plugin Name:       Customer Reports for WooCommerce
+ * Plugin Name:       Customer Reports for WC
  * Description:       Dedicated customers repost page with customers sales information.
  * Version:           1.0.0
  * Author:            WpExpertPlugins
@@ -22,7 +21,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       customer-reports-for-wc
  * Domain Path:       /languages
- * Tested up to: 	6.6.1
+ * Tested up to:    6.6.1
  */
 
 // If this file is called directly, abort.
@@ -32,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use 
+ * Start at version 1.0.0 and use
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'CUSTOMER_REPORTS_FOR_WC_VERSION', '1.0.0' );
@@ -77,6 +76,5 @@ function run_customer_reports_for_wc() {
 
 	$plugin = new Customer_Reports_For_Wc();
 	$plugin->run();
-
 }
 run_customer_reports_for_wc();

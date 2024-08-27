@@ -1,7 +1,6 @@
-# Customer report dashboard for woocommerce
-Contributors: gandhihitesh9,pooja-n
-Tags: woocommerce, better, customer, list, user, management, data, status, orders, report, value
-Requires at least: 4.7
+# Customer report dashboard for WC
+Contributors: gandhihitesh9
+Tags: woocommerce, customer, report
 Tested up to: 6.6.1
 Stable tag: 1.0.0
 WC requires at least: 2.5.5
