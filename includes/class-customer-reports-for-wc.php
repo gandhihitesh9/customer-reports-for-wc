@@ -75,7 +75,6 @@ class Customer_Reports_For_Wc {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 	}
 
 	/**
@@ -100,21 +99,20 @@ class Customer_Reports_For_Wc {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-customer-reports-for-wc-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-customer-reports-for-wc-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-customer-reports-for-wc-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-customer-reports-for-wc-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-customer-reports-for-wc-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-customer-reports-for-wc-admin.php';
 
 		$this->loader = new Customer_Reports_For_Wc_Loader();
-
 	}
 
 	/**
@@ -131,7 +129,6 @@ class Customer_Reports_For_Wc {
 		$plugin_i18n = new Customer_Reports_For_Wc_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -149,7 +146,7 @@ class Customer_Reports_For_Wc {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'check_woocommerce_and_deactivate_plugin' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'woo_customer_menu' );
-
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'wporg_add_dashboard_widgets' );
 	}
 
 	/**
@@ -191,5 +188,4 @@ class Customer_Reports_For_Wc {
 	public function get_version() {
 		return $this->version;
 	}
-
 }
