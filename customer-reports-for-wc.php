@@ -22,6 +22,7 @@
  * Text Domain:       customer-reports-for-wc
  * Domain Path:       /languages
  * Tested up to:    6.6.1
+ * Requires Plugins: woocommerce
  */
 
 // If this file is called directly, abort.
@@ -34,13 +35,26 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CUSTOMER_REPORTS_FOR_WC_VERSION', '1.0.0' );
-
+if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_VERSION' ) ) {
+	define( 'CUSTOMER_REPORTS_FOR_WC_VERSION', time() );
+}
+if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_DIR' ) ) {
+	define( 'CUSTOMER_REPORTS_FOR_WC_DIR', __DIR__ );      // Plugin dir
+}
+if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_PLUGIN_MAIN_FILE_PATH' ) ) {
+	define( 'CUSTOMER_REPORTS_FOR_WC_PLUGIN_MAIN_FILE_PATH', __FILE__ );   // mail file path
+}
+if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_URL' ) ) {
+	define( 'CUSTOMER_REPORTS_FOR_WC_URL', plugin_dir_url( __FILE__ ) );   // Plugin url
+}
+if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_HELP_LINK' ) ) {
+	define( 'CUSTOMER_REPORTS_FOR_WC_HELP_LINK', 'http://www.wpexpertplugins.com/contact-us/' ); // Variable Prefix
+}
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-customer-reports-for-wc-activator.php
  */
-function activate_customer_reports_for_wc() {
+function activate_crfwc() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc-activator.php';
 	Customer_Reports_For_Wc_Activator::activate();
 }
@@ -49,13 +63,13 @@ function activate_customer_reports_for_wc() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-customer-reports-for-wc-deactivator.php
  */
-function deactivate_customer_reports_for_wc() {
+function deactivate_crfwc() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc-deactivator.php';
 	Customer_Reports_For_Wc_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_customer_reports_for_wc' );
-register_deactivation_hook( __FILE__, 'deactivate_customer_reports_for_wc' );
+register_activation_hook( __FILE__, 'activate_crfwc' );
+register_deactivation_hook( __FILE__, 'deactivate_crfwc' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -72,9 +86,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc.ph
  *
  * @since    1.0.0
  */
-function run_customer_reports_for_wc() {
+function run_crfwc() {
 
 	$plugin = new Customer_Reports_For_Wc();
 	$plugin->run();
 }
-run_customer_reports_for_wc();
+run_crfwc();

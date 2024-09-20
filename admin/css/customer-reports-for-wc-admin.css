@@ -1,5 +1,29 @@
-#woo_customer_info_length { display: none; }
-table.dataTable > tbody > tr.even { background:white;  }
-.table-bordered th, .table-bordered td { border: 1px solid #dee2e6; }
-#woo_customer_info { padding-top: 10px; }
-#woo_customer_info_filter input { background-color: white; }
+#woo_customer_info_length {
+    display: none;
+}
+
+table.dataTable>tbody>tr:nth-child(even) {
+    background: white;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+#woo_customer_info {
+    padding-top: 10px;
+}
+
+#woo_customer_info_wrapper input,
+.buttons-csv {
+    background-color: white;
+}
+
+.dt-search {
+    float: right;
+}
+
+#woo_customer_info_wrapper input {
+    line-height: 1;
+}
