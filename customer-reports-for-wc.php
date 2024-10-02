@@ -54,7 +54,7 @@ if ( ! defined( 'CUSTOMER_REPORTS_FOR_WC_HELP_LINK' ) ) {
  * The code that runs during plugin activation.
  * This action is documented in includes/class-customer-reports-for-wc-activator.php
  */
-function activate_crfwc() {
+function crfwc_activate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc-activator.php';
 	Customer_Reports_For_Wc_Activator::activate();
 }
@@ -63,13 +63,13 @@ function activate_crfwc() {
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-customer-reports-for-wc-deactivator.php
  */
-function deactivate_crfwc() {
+function crfwc_deactivate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc-deactivator.php';
 	Customer_Reports_For_Wc_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_crfwc' );
-register_deactivation_hook( __FILE__, 'deactivate_crfwc' );
+register_activation_hook( __FILE__, 'crfwc_activate' );
+register_deactivation_hook( __FILE__, 'crfwc_deactivate' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -86,9 +86,9 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-customer-reports-for-wc.ph
  *
  * @since    1.0.0
  */
-function run_crfwc() {
+function crfwc_run() {
 
 	$plugin = new Customer_Reports_For_Wc();
 	$plugin->run();
 }
-run_crfwc();
+crfwc_run();
